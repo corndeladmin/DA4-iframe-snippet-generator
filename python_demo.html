@@ -1,0 +1,75 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>python_demo.py</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/atom-one-light.min.css"
+      id="code-theme"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"
+    ></script>
+
+    <style>
+      .switch { position: relative; display: inline-block; width: 50px; height:
+      28px; } .switch input { opacity: 0; width: 0; height: 0; } .slider {
+      position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0;
+      background-color: #ccc; -webkit-transition: 0.4s; transition: 0.4s; }
+      .slider:before { position: absolute; content: ""; height: 20px; width:
+      20px; left: 4px; bottom: 4px; background-color: white; -webkit-transition:
+      0.4s; transition: 0.4s; } input:checked + .slider { background-color:
+      #282c34; } input:focus + .slider { box-shadow: 0 0 1px #282c34; }
+      input:checked + .slider:before { -webkit-transform: translateX(20px);
+      -ms-transform: translateX(20px); transform: translateX(20px); } .slider.round { border-radius: 28px; } .slider.round:before {
+      border-radius: 50%; } .summary { display: flex; font-family: Arial,
+      sans-serif; font-size: 16px; color: #333; align-items: center; gap: 10px;
+      justify-content: space-between; } .summary-toggle { display: flex; gap:
+      10px; align-items: center;} pre { margin: 0; height: fit-content; }
+
+    </style>
+  </head>
+  <body>
+    <div class="summary">
+      <p><em>python_demo.py</em></p>
+      <div class="summary-toggle">
+        <p>Toggle Theme</p>
+        <label class="switch">
+          <input type="checkbox" id="checkbox" />
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </div>
+    <pre>
+      <code class=python>print(&quot;This is a demo snippet!&quot;)
+
+
+def greet(name):
+    return f&quot;Hello, {name}!&quot;
+
+
+print(greet(&quot;World!&quot;))
+</code>
+    </pre>
+    <script>hljs.highlightAll();</script>
+    <script>
+      const LIGHT_THEME =
+      'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/atom-one-light.min.css';
+      const DARK_THEME =
+      'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/atom-one-dark.min.css';
+      const toggleButton = document.getElementById('checkbox'); const codeTheme
+      = document.getElementById('code-theme');
+      toggleButton.addEventListener('click', () => { if
+      (codeTheme.getAttribute('href') === LIGHT_THEME) { codeTheme.setAttribute(
+      'href', DARK_THEME ); } else { codeTheme.setAttribute( 'href', LIGHT_THEME
+      ); } });
+    </script>
+  </body>
+</html>
