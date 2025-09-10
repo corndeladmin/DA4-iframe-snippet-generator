@@ -1,0 +1,39 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>AI6 Rise Resources</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body { font-family: Arial, sans-serif; margin: 2rem; } h1 { color: hsl(0,
+      0%, 20%); }
+
+    </style>
+    <script>
+      function copyToClipboard(text) { navigator.clipboard.writeText(text).then(
+      () => alert("Copied to clipboard!"), () => alert("Failed to copy!") ); }
+    </script>
+  </head>
+  <body>
+    <h1>Preview All Generated Iframes</h1>
+    {{#each filesCreated}}
+      <div style="display: flex; gap: 1rem; align-items: center;">
+        <p>{{this.title}}</p>
+        <button
+          onclick="copyToClipboard('<iframe src=&quot;https://{{../GH_ORG}}.github.io/{{../GH_REPOSITORY}}/{{this.url}}&quot;></iframe>')"
+        >
+          Copy iframe html to clipboard
+        </button>
+      </div>
+      <pre>
+        <code>
+          <iframe
+            width="50%"
+            src="https://{{../GH_ORG}}.github.io/{{../GH_REPOSITORY}}/{{this.url}}"
+          ></iframe>
+        </code>
+      </pre>
+
+      <br />
+    {{/each}}
+  </body>
+</html>
